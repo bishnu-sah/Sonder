@@ -3,6 +3,7 @@ import LandingPage from './pages/LandingPage';
 import Dashboard from './pages/Dashboard';
 import Library from './pages/Library';
 import Roleplay from './pages/Roleplay';
+import Progress from './pages/Progress';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/library" element={<Library />} />
         <Route path="/roleplay" element={<Roleplay />} />
+        <Route path="/progress" element={<Progress />} />
       </Routes>
     </BrowserRouter>
   );
