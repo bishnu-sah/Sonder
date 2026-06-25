@@ -34,22 +34,30 @@ export default function ProductShowcase() {
         {/* Showcase Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-          {/* Left Column: Dark Scenario Widget Panel */}
+          {/* Left Column: Scenario Widget Panel */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             variants={scaleIn}
             transition={{ ...transition, delay: 0.1 }}
-            whileHover={{ y: -12, boxShadow: "0 30px 60px rgba(0,0,0,0.2)" }}
-            className="bg-[#1E252B] rounded-3xl p-8 md:p-12 flex items-center justify-center border border-brand-eggplant/10 shadow-lg min-h-[400px] md:min-h-[500px] cursor-pointer"
+            whileHover={{ y: -12 }}
+            className="rounded-3xl p-8 md:p-12 flex items-center justify-center min-h-[400px] md:min-h-[500px] cursor-pointer"
           >
             {/* Inner Interactive Widget Mockup */}
-            <img
-              src="/SONDER.png"
-              alt="Sonder"
-              className="w-full h-auto rounded-2xl object-cover"
-            />
+            <div
+              className="relative w-[66.5%] aspect-[834/906] overflow-hidden rounded-[6%]"
+              style={{
+                boxShadow: '0 35px 90px rgba(0,0,0,0.14), 0 10px 30px rgba(0,0,0,0.08)',
+                filter: 'drop-shadow(0 0 40px rgba(255,255,255,0.18))',
+              }}
+            >
+              <img
+                src="/SONDER.png"
+                alt="Sonder"
+                className="absolute max-w-none h-auto w-[150.4%] left-[-25.5%] top-[-21.3%]"
+              />
+            </div>
           </motion.div>
 
 

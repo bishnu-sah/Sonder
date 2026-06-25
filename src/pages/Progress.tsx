@@ -19,6 +19,7 @@ import {
   UsersRound,
 } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { logout } from '../utils/logout';
 
 const plum = '#3B1E35';
 
@@ -89,7 +90,7 @@ function ProgressSidebar() {
         </ul>
       </nav>
 
-      <div className="space-y-3">
+      <div>
         <motion.button
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.98 }}
@@ -99,14 +100,19 @@ function ProgressSidebar() {
           <Plus size={17} />
           New Simulation
         </motion.button>
-        <button className="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-[13px] font-semibold text-[#241328]/50 transition-colors hover:text-[#241328]">
-          <HelpCircle size={17} />
-          Help
-        </button>
-        <button className="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-[13px] font-semibold text-[#241328]/50 transition-colors hover:text-[#241328]">
-          <LogOut size={17} />
-          Logout
-        </button>
+        <div className="mt-9">
+          <button className="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-[13px] font-semibold text-[#241328]/50 transition-colors hover:text-[#241328]">
+            <HelpCircle size={17} />
+            Help
+          </button>
+          <button
+            onClick={() => logout(navigate)}
+            className="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-[13px] font-semibold text-[#241328]/50 transition-colors hover:text-[#241328]"
+          >
+            <LogOut size={17} />
+            Logout
+          </button>
+        </div>
       </div>
     </motion.aside>
   );

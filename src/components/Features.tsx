@@ -17,8 +17,8 @@ const slideFromRight = {
 };
 
 const scaleIn = {
-  hidden: { scale: 0.95, opacity: 0 },
-  visible: { scale: 1, opacity: 1 },
+  hidden: { y: 40, scale: 0.96, opacity: 0 },
+  visible: { y: 0, scale: 1, opacity: 1 },
 };
 
 const iconPop = {
@@ -60,7 +60,7 @@ export default function Features() {
             viewport={{ once: true, amount: 0.25 }}
             variants={slideFromLeft}
             transition={transition}
-            className="w-full md:w-1/2 space-y-4 text-left order-2 md:order-1"
+            className="w-full md:basis-[45%] space-y-4 text-left order-2 md:order-1"
           >
             <motion.div
               variants={iconPop}
@@ -86,24 +86,22 @@ export default function Features() {
             viewport={{ once: true, amount: 0.25 }}
             variants={slideFromRight}
             transition={{ ...transition, delay: 0.15 }}
-            className="w-full md:w-1/2 order-1 md:order-2"
+            className="w-full md:basis-[55%] order-1 md:order-2"
           >
             <motion.div
               variants={scaleIn}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.25 }}
-              transition={{ ...transition, delay: 0.2 }}
-              whileHover={{ y: -10, boxShadow: "0 20px 40px rgba(0,0,0,0.08)" }}
-              className="w-full aspect-[4/3] rounded-3xl bg-card-peach flex items-center justify-center border border-brand-eggplant/5 shadow-sm transition-colors duration-300 hover:bg-card-peach/90 cursor-pointer"
+              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] as const }}
+              whileHover={{ y: -10, scale: 1.03, transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] as const } }}
+              className="feature-illustration-card feature-glow-roleplay w-full aspect-[4/3] rounded-3xl bg-card-peach flex items-center justify-center border border-brand-eggplant/5 transition-colors duration-300 hover:bg-card-peach/90 cursor-pointer"
             >
-              <motion.div
-                whileHover={{ rotate: 5, scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-                className="p-8 bg-white/60 rounded-2xl border border-white shadow-inner flex items-center justify-center w-24 h-24"
+              <div
+                className="feature-illustration-icon p-8 bg-white/60 rounded-2xl border border-white shadow-inner flex items-center justify-center w-32 h-32"
               >
-                <MessageSquare className="w-10 h-10 text-brand-eggplant/20 stroke-[1.5]" />
-              </motion.div>
+                <MessageSquare className="w-12 h-12 text-brand-eggplant/20 stroke-[1.5]" />
+              </div>
             </motion.div>
           </motion.div>
         </div>
@@ -117,24 +115,22 @@ export default function Features() {
             viewport={{ once: true, amount: 0.25 }}
             variants={slideFromLeft}
             transition={{ ...transition, delay: 0.15 }}
-            className="w-full md:w-1/2"
+            className="w-full md:basis-[55%]"
           >
             <motion.div
               variants={scaleIn}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.25 }}
-              transition={{ ...transition, delay: 0.2 }}
-              whileHover={{ y: -10, boxShadow: "0 20px 40px rgba(0,0,0,0.08)" }}
-              className="w-full aspect-[4/3] rounded-3xl bg-card-cream flex items-center justify-center border border-brand-eggplant/5 shadow-sm transition-colors duration-300 hover:bg-card-cream/90 cursor-pointer"
+              transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] as const }}
+              whileHover={{ y: -10, scale: 1.03, transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] as const } }}
+              className="feature-illustration-card feature-glow-eq w-full aspect-[4/3] rounded-3xl bg-card-cream flex items-center justify-center border border-brand-eggplant/5 transition-colors duration-300 hover:bg-card-cream/90 cursor-pointer"
             >
-              <motion.div
-                whileHover={{ rotate: 5, scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-                className="p-8 bg-white/60 rounded-2xl border border-white shadow-inner flex items-center justify-center w-24 h-24"
+              <div
+                className="feature-illustration-icon p-8 bg-white/60 rounded-2xl border border-white shadow-inner flex items-center justify-center w-32 h-32"
               >
-                <Brain className="w-10 h-10 text-brand-eggplant/20 stroke-[1.5]" />
-              </motion.div>
+                <Brain className="w-12 h-12 text-brand-eggplant/20 stroke-[1.5]" />
+              </div>
             </motion.div>
           </motion.div>
           {/* Text Right */}
@@ -144,7 +140,7 @@ export default function Features() {
             viewport={{ once: true, amount: 0.25 }}
             variants={slideFromRight}
             transition={transition}
-            className="w-full md:w-1/2 space-y-4 text-left"
+            className="w-full md:basis-[45%] space-y-4 text-left"
           >
             <motion.div
               variants={iconPop}
@@ -174,7 +170,7 @@ export default function Features() {
             viewport={{ once: true, amount: 0.25 }}
             variants={slideFromLeft}
             transition={transition}
-            className="w-full md:w-1/2 space-y-4 text-left order-2 md:order-1"
+            className="w-full md:basis-[45%] space-y-4 text-left order-2 md:order-1"
           >
             <motion.div
               variants={iconPop}
@@ -200,24 +196,22 @@ export default function Features() {
             viewport={{ once: true, amount: 0.25 }}
             variants={slideFromRight}
             transition={{ ...transition, delay: 0.15 }}
-            className="w-full md:w-1/2 order-1 md:order-2"
+            className="w-full md:basis-[55%] order-1 md:order-2"
           >
             <motion.div
               variants={scaleIn}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.25 }}
-              transition={{ ...transition, delay: 0.2 }}
-              whileHover={{ y: -10, boxShadow: "0 20px 40px rgba(0,0,0,0.08)" }}
-              className="w-full aspect-[4/3] rounded-3xl bg-card-sage flex items-center justify-center border border-brand-eggplant/5 shadow-sm transition-colors duration-300 hover:bg-card-sage/90 cursor-pointer"
+              transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] as const }}
+              whileHover={{ y: -10, scale: 1.03, transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] as const } }}
+              className="feature-illustration-card feature-glow-analytics w-full aspect-[4/3] rounded-3xl bg-card-sage flex items-center justify-center border border-brand-eggplant/5 transition-colors duration-300 hover:bg-card-sage/90 cursor-pointer"
             >
-              <motion.div
-                whileHover={{ rotate: 5, scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-                className="p-8 bg-white/60 rounded-2xl border border-white shadow-inner flex items-center justify-center w-24 h-24"
+              <div
+                className="feature-illustration-icon p-8 bg-white/60 rounded-2xl border border-white shadow-inner flex items-center justify-center w-32 h-32"
               >
-                <BarChart3 className="w-10 h-10 text-brand-eggplant/20 stroke-[1.5]" />
-              </motion.div>
+                <BarChart3 className="w-12 h-12 text-brand-eggplant/20 stroke-[1.5]" />
+              </div>
             </motion.div>
           </motion.div>
         </div>

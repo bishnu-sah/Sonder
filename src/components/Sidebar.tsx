@@ -10,6 +10,7 @@ import {
   LogOut,
 } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { logout } from '../utils/logout';
 
 const navItems = [
   { icon: Home,       label: 'Home',     path: '/dashboard' },
@@ -88,37 +89,21 @@ export default function Sidebar() {
           <Plus size={16} strokeWidth={2.2} />
           New Simulation
         </motion.button>
-      </nav>
 
-      {/* Bottom */}
-      <div className="px-3 pb-5">
-        <div className="flex items-center gap-2.5 px-3 py-3 rounded-xl bg-white/[0.06] mb-4">
-          <img
-            src="/profile-avatar.png"
-            alt="Ishaan preet"
-            className="w-8 h-8 rounded-full object-cover ring-2 ring-white/10"
-          />
-          <div className="min-w-0">
-            <p className="text-[12.5px] font-sans font-semibold text-white truncate leading-tight">
-              Ishaan preet
-            </p>
-            <p className="text-[10px] font-sans text-white/40 leading-tight">
-              Senior Manager
-            </p>
-          </div>
-        </div>
-
-        <div className="space-y-0.5">
+        <div className="mt-9 space-y-0.5">
           <button className="w-full flex items-center gap-2.5 px-3 py-2 text-[12.5px] font-sans text-white/45 hover:text-white/70 transition-colors duration-200">
             <HelpCircle size={15} strokeWidth={1.6} />
             Help
           </button>
-          <button className="w-full flex items-center gap-2.5 px-3 py-2 text-[12.5px] font-sans text-white/45 hover:text-white/70 transition-colors duration-200">
+          <button
+            onClick={() => logout(navigate)}
+            className="w-full flex items-center gap-2.5 px-3 py-2 text-[12.5px] font-sans text-white/45 hover:text-white/70 transition-colors duration-200"
+          >
             <LogOut size={15} strokeWidth={1.6} />
             Logout
           </button>
         </div>
-      </div>
+      </nav>
     </aside>
   );
 }
