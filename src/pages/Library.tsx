@@ -162,7 +162,7 @@ export default function Library() {
                   {/* Soft glow behind illustration */}
                   <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#4D2946]/30 to-[#4D2946]" />
                   <img
-                    src="/dei-illustration.png"
+                    src="/people.png"
                     alt="DEI Learning Path"
                     className="absolute right-0 bottom-0 h-full w-full object-cover object-center opacity-80"
                   />

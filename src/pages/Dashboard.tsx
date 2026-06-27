@@ -45,19 +45,19 @@ const practiceCards = [
   {
     title: 'The Burnt-Out Superstar',
     desc: 'Navigate a conversation with a top performer showing signs of burnout.',
-    image: '/card-burnt-out.png',
+    image: '/card1.png',
     tag: 'Compassion',
   },
   {
     title: 'Micro-Aggression Repair',
     desc: 'Address a micro-aggression reported by a team member with care.',
-    image: '/card-micro-aggression.png',
+    image: '/card2.png',
     tag: 'Validation',
   },
   {
     title: 'Navigating Salary Gaps',
     desc: 'Handle a difficult salary equity conversation with transparency.',
-    image: '/card-salary-gaps.png',
+    image: '/card3.png',
     tag: 'Directness',
   },
 ];
@@ -69,13 +69,17 @@ const skillData = [
 ];
 
 // Animation variants
-const fadeUp = {
-  hidden: { opacity: 0, y: 18 },
-  visible: (i: number) => ({
+import type { Variants } from "framer-motion";
+
+const fadeUp: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  visible: {
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] },
-  }),
+  },
 };
 
 export default function Dashboard() {
@@ -176,7 +180,7 @@ export default function Dashboard() {
               className="relative rounded-2xl overflow-hidden min-h-[260px] group cursor-pointer"
             >
               <img
-                src="/simulation-hero.png"
+                src="/DASHBOARD.png"  
                 alt="Performance Review Simulation"
                 className="absolute inset-0 w-full h-full object-cover"
               />
